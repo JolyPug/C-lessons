@@ -1,17 +1,19 @@
-﻿
-string[] number = Console.ReadLine().Split(',');
-int a = Convert.ToInt32(number[0]);
-int d = a % 2;
-
-if(d == 0)
+﻿string[] number = Console.ReadLine().Split(',');
+if (number.Length >= 1 && int.TryParse(number[0], out int a))
 {
-
-    Console.Write(a);
-    Console.Write(" -> Да");
-    
+    int d = a % 2;
+    if (d == 0)
+    {
+        Console.Write(a);
+        Console.Write(" -> Да");
+    }
+    else
+    {
+        Console.Write(a);
+        Console.Write(" -> Нет");
+    }
 }
 else
 {
-    Console.Write(a);
-    Console.Write(" -> Нет");
+    Console.WriteLine("Invalid input");
 }

@@ -28,7 +28,7 @@ void Print(int number)
 {   
     if(CheckNumber(number) == 0)
     {
-        Console.WriteLine($"Чило {number} не является днем недели");
+        Console.WriteLine($"Число {number} не является днем недели");
         return;
     }
     if(IsWeekend(number) == true)

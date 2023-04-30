@@ -1,15 +1,14 @@
-﻿
-using System;
+﻿using System;
 
-string numbers = Console.ReadLine();
-int num = Convert.ToInt32(numbers);
-
-for(int i = 1; i < num; i++)
+string numberString = Console.ReadLine();
+if (!int.TryParse(numberString, out int number))
 {
-    if(i % 2 == 0)
+    Console.WriteLine("Invalid input");
+}
+else
+{
+    for (int i = 2; i <= number; i += 2)
     {
-    Console.WriteLine(i);
+        Console.WriteLine(i);
     }
 }
-
-
