@@ -107,17 +107,18 @@ PrintDistance(xA, yA, zA, xB, yB, zB);
 // 5 -> 1, 8, 27, 64, 125
 
 
-void Init(int number)
+void PrintCubes(int number)
 {
     Console.Write($"{number} -> ");
-    int power = 3;
-    for(int i = 0; i < number; i++)
+    for(int i = 1; i <= number; i++)
     {
-        Console.Write(Math.Pow(i, power) + ",");
+        Console.Write(Math.Pow(i, 3) + ",");
+        if(i != number)
+            Console.Write(", ");
     }
 }
 
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-Init(number);
+PrintCubes(number);
