@@ -5,6 +5,7 @@
 // 12821 -> да
 // 23432 -> да
 
+
 bool checkNumber(string number)
 {
     int len = number.Length;
@@ -94,7 +95,6 @@ int yB = Convert.ToInt32(numberB[1]);
 int zB = Convert.ToInt32(numberB[2]);
 
 PrintDistance(xA, yA, zA, xB, yB, zB);
-
 
 
 
