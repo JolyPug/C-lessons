@@ -12,8 +12,9 @@ bool checkNumber(string number)
     if(len == 5)
     {
         if(number[0] == number[4] && number[1] == number[3])
-            {return true; 
-            Console.WriteLine("iiiii");}
+            {
+                return true; 
+            }
         else
             return false;
     }
