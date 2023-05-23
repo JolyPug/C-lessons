@@ -11,7 +11,7 @@
 void numberPow(int numberA, int numberB)
 {
     int numberC = 1;
-    for(int i = 0; i < numberB; i++)
+    for (int i = 0; i < numberB; i++)
         numberC = numberC * numberA;
     Console.Write($"{numberA}, {numberB} -> {numberC}");
 }
@@ -42,19 +42,19 @@ void summaryOfNumbers(int digit, int digitalNumber)
 {
     int length = 1;
     int result = 0;
-    for(int j = 1; j < numbers.Length; j++)
+    for (int j = 1; j < numbers.Length; j++)
     {
         length *= 10;
     }
 
-    for(int i = 0; i < numbers.Length; i++)
+    for (int i = 0; i < numbers.Length; i++)
     {
         int newNum = digit / length;
         digit = digit - newNum * length;
         length /= 10;
         result += newNum;
-        
-    }   
+
+    }
     Console.WriteLine($"{digitalNumber} -> {result}");
 }
 
@@ -74,12 +74,12 @@ summaryOfNumbers(digit, digitalNumber);
 
 
 int[] FillArray(int length)
-{   
+{
     int[] arr = new int[length];
-    Random rand = new Random(); 
-    for(int i = 0; i < length; i++)
+    Random rand = new Random();
+    for (int i = 0; i < length; i++)
     {
-        arr[i] = rand.Next(1,10);
+        arr[i] = rand.Next(1, 10);
     }
     return arr;
 }

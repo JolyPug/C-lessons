@@ -16,15 +16,15 @@ int number = ReadAndConvert("Введите число: ");
 int SecondDigit = number / 10 % 10;
 bool CheckNumber(int number)
 {
-    if (number < 100 || number >=1000)
- {
-    return true;
- }
- return false;
+    if (number < 100 || number >= 1000)
+    {
+        return true;
+    }
+    return false;
 }
- void Print(int number, int SecondDigit)
+void Print(int number, int SecondDigit)
 {
-    if(CheckNumber(number) == true)
+    if (CheckNumber(number) == true)
     {
         Console.WriteLine($"Не трехзначное число -> {number}");
         return;
@@ -52,21 +52,21 @@ int ReadAndConvert(string message)
 }
 int GetThirdDigit(int number)
 {
-    while(number > 999)
-        number /=10;
+    while (number > 999)
+        number /= 10;
     return number % 10;
 }
 bool CheckNumber(int number)
 {
-    if(number < 100)
+    if (number < 100)
         return false;
     return true;
 }
 void Print(int number)
 {
-    if(CheckNumber(number))
+    if (CheckNumber(number))
         Console.WriteLine($"{number} -> {GetThirdDigit(number)}");
-    else 
+    else
         Console.WriteLine($"{number} -> нет третьей цифры");
 }
 int number = ReadAndConvert("Введите число:");
@@ -93,24 +93,24 @@ int CheckNumber(int number)
 {
     if (number > 7)
         return 0;
-    else 
-    return number;
+    else
+        return number;
 }
 bool IsWeekend(int number)
 {
-    if(number < 5)
+    if (number < 5)
         return false;
     else
         return true;
 }
 void Print(int number)
-{   
-    if(CheckNumber(number) == 0)
+{
+    if (CheckNumber(number) == 0)
     {
         Console.WriteLine($"Чило {number} не является днем недели");
         return;
     }
-    if(IsWeekend(number) == true)
+    if (IsWeekend(number) == true)
         Console.WriteLine($"{number} -> да");
     else
         Console.WriteLine($"{number} -> нет");
