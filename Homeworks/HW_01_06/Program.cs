@@ -1,19 +1,16 @@
-﻿string[] number = Console.ReadLine().Split(',');
-if (number.Length >= 1 && int.TryParse(number[0], out int a))
-{
-    int d = a % 2;
-    if (d == 0)
-    {
-        Console.Write(a);
-        Console.Write(" -> Да");
-    }
-    else
-    {
-        Console.Write(a);
-        Console.Write(" -> Нет");
-    }
-}
-else
+﻿string? input = Console.ReadLine();
+if (string.IsNullOrWhiteSpace(input))
 {
     Console.WriteLine("Invalid input");
+    return;
 }
+
+string[] inputNumbers = input.Split(',');
+if (inputNumbers.Length != 1 || !int.TryParse(inputNumbers[0], out int number))
+{
+    Console.WriteLine("Invalid input");
+    return;
+}
+
+int remainder = number % 2;
+Console.Write($"{number} -> {(remainder == 0 ? "Да" : "Нет")}");

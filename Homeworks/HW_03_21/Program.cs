@@ -5,34 +5,46 @@
 
 // A (7,-5, 0); B (1,-1,9) -> 11.53
 
+using System;
 
-double CalculateDistance(int xA, int yA, int zA, int xB, int yB, int zB)
-{   
-    double distanceSquared = Math.Abs(Math.Pow((xB - xA),2) + Math.Pow((yB - yA),2) + Math.Pow((zB - zA),2));
-    double result = Math.Sqrt(distanceSquared);
-    return result;
-}
-
-void PrintDistance(int xA, int yA, int zA, int xB, int yB, int zB)
+class Program
 {
-    double distance = CalculateDistance(xA, yA, zA, xB, yB, zB);
-    if(distance > 0)
+    static double CalculateDistance(double x1, double y1, double z1, double x2, double y2, double z2)
     {
-        Console.WriteLine($"A({xA},{yA},{zA}); B({xB},{yB},{zB}) - > {distance}");
+        double distanceSquared = Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2) + Math.Pow((z2 - z1), 2);
+        return Math.Sqrt(distanceSquared);
     }
-    else Console.WriteLine($"Невозможно посчитать расстояние");
+
+    static void PrintDistance(double x1, double y1, double z1, double x2, double y2, double z2)
+    {
+        double distance = CalculateDistance(x1, y1, z1, x2, y2, z2);
+        if(distance > 0)
+        {
+            Console.WriteLine($"Distance between Point 1 ({x1},{y1},{z1}) and Point 2 ({x2},{y2},{z2}) is {distance:F2}");
+        }
+        else Console.WriteLine($"Unable to calculate distance");
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Enter Point 1 coordinates (x,y,z): ");
+        string[] point1Coordinates = Console.ReadLine()?.Split(',');
+        double x1, y1, z1;
+        if (!double.TryParse(point1Coordinates[0], out x1) || !double.TryParse(point1Coordinates[1], out y1) || !double.TryParse(point1Coordinates[2], out z1))
+        {
+            Console.WriteLine("Invalid input for Point 1 coordinates");
+            return;
+        }
+
+        Console.WriteLine("Enter Point 2 coordinates (x,y,z): ");
+        string[] point2Coordinates = Console.ReadLine()?.Split(',');
+        double x2, y2, z2;
+        if (!double.TryParse(point2Coordinates[0], out x2) || !double.TryParse(point2Coordinates[1], out y2) || !double.TryParse(point2Coordinates[2], out z2))
+        {
+            Console.WriteLine("Invalid input for Point 2 coordinates");
+            return;
+        }
+
+        PrintDistance(x1, y1, z1, x2, y2, z2);
+    }
 }
-
-Console.WriteLine("Введите координаты точки A: ");
-string[] numberA = Console.ReadLine().Split(',');
-int xA = Convert.ToInt32(numberA[0]);
-int yA = Convert.ToInt32(numberA[1]);
-int zA = Convert.ToInt32(numberA[2]);
-
-Console.WriteLine("Введите координаты точки B: ");
-string[] numberB = Console.ReadLine().Split(',');
-int xB = Convert.ToInt32(numberB[0]);
-int yB = Convert.ToInt32(numberB[1]);
-int zB = Convert.ToInt32(numberB[2]);
-
-PrintDistance(xA, yA, zA, xB, yB, zB);

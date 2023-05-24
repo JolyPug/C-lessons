@@ -1,6 +1,6 @@
 ﻿using System;
 
-string numberString = Console.ReadLine();
+string? numberString = Console.ReadLine();
 if (!int.TryParse(numberString, out int number))
 {
     Console.WriteLine("Invalid input");

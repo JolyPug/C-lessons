@@ -8,16 +8,22 @@
 
 
 
-void numberPow(int numberA, int numberB)
+void Main()
 {
-    int numberC = 1;
-    for(int i = 0; i < numberB; i++)
-        numberC = numberC * numberA;
-    Console.Write($"{numberA}, {numberB} -> {numberC}");
+    Console.Write("Enter two numbers: ");
+    int[] numbers = Console.ReadLine().Split(',')
+                                    .Select(n => Convert.ToInt32(n.Trim()))
+                                    .ToArray();
+    Console.WriteLine($"{numbers[0]}^{numbers[1]} = {numberPow(numbers[0], numbers[1])}");
 }
 
-Console.Write("Числа:  ");
-string[] numbers = Console.ReadLine().Split(',');
-int numberA = Convert.ToInt32(numbers[0]);
-int numberB = Convert.ToInt32(numbers[1]);
-numberPow(numberA, numberB);
+int numberPow(int numberA, int numberB)
+{
+    int result = 1;
+    for (int i = 0; i < numberB; i++)
+    {
+        result *= numberA;
+    }
+    return result;
+}
+Main();

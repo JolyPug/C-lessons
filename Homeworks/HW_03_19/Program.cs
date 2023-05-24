@@ -5,41 +5,19 @@
 // 12821 -> да
 // 23432 -> да
 
-bool checkNumber(string number)
+string? input = Console.ReadLine();
+if (string.IsNullOrWhiteSpace(input))
 {
-    int len = number.Length;
-    
-    if(len == 5)
-    {
-        if(number[0] == number[4] && number[1] == number[3])
-            {
-                return true; 
-            }
-        else
-            return false;
-    }
-    else return false;
+    Console.WriteLine("Invalid input");
+    return;
 }
 
-void Print(string number)
+string[] inputNumbers = input.Split(',');
+if (inputNumbers.Length != 1 || !int.TryParse(inputNumbers[0], out int number))
 {
-    int len = number.Length;
-    if(len == 5)
-    {
-        if(checkNumber(number) == true)
-        {
-            Console.WriteLine($"{number} ->  да");
-        }
-        else
-        {
-            Console.WriteLine($"{number} ->  нет");
-        }
-    }
-    else
-    {
-        Console.WriteLine( $"{number} -> не является пятизначным");
-    }
+    Console.WriteLine("Invalid input");
+    return;
 }
-Console.WriteLine("Введите число: ");
-string number = Console.ReadLine();
-Print(number);
+
+int remainder = number % 2;
+Console.Write($"{number} -> {(remainder == 0 ? "Да" : "Нет")}");
