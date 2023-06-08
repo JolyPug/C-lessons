@@ -5,7 +5,7 @@
 // [345, 897, 568, 234] -> 2
 
 
-int[] FillArray(int[] numbers)
+int[] fillArrayWithRandomNumbers(int[] numbers)
 {
     Console.Write("[");
     Random rnd = new Random();
@@ -21,7 +21,7 @@ int[] FillArray(int[] numbers)
     return numbers;
 }
 
-int CheckArray(int[] numbers, int[] posnum)
+int findEvenNumber(int[] numbers, int[] posnum)
 {
     int count = 0;
     for (int i = 0; i < numbers.Length; i++)
@@ -41,8 +41,8 @@ int CheckArray(int[] numbers, int[] posnum)
 const int sizeOf = 4;
 int[] numbers = new int[sizeOf];
 int[] posnum = new int[sizeOf];
-FillArray(numbers);
-CheckArray(numbers, posnum);
+fillArrayWithRandomNumbers(numbers);
+findEvenNumber(numbers, posnum);
 
 
 
@@ -56,7 +56,7 @@ CheckArray(numbers, posnum);
 // [-4, -6, 89, 6] -> 0
 
 
-int[] FillArray(int[] numbers)
+int[] fillArrayWithRandomNumbers(int[] numbers)
 {
     Console.Write("[");
     Random rnd = new Random();
@@ -71,7 +71,7 @@ int[] FillArray(int[] numbers)
     }
     return numbers;
 }
-int CheckArray(int[] numbers)
+int findEvenNumber(int[] numbers)
 {
     int sum = 0;
     for (int i = 0; i < numbers.Length; i++)
@@ -86,8 +86,8 @@ int CheckArray(int[] numbers)
 }
 const int sizeOf = 4;
 int[] numbers = new int[sizeOf];
-FillArray(numbers);
-CheckArray(numbers);
+fillArrayWithRandomNumbers(numbers);
+findEvenNumber(numbers);
 
 
 
@@ -98,7 +98,7 @@ CheckArray(numbers);
 // [3 7 22 2 78] -> 76
 
 
-int[] FillArray(int[] numbers)
+int[] fillArrayWithRandomNumbers(int[] numbers)
 {
     Console.Write("[");
     Random rnd = new Random();
@@ -129,7 +129,7 @@ int Magnitude(int[] numbers)
 
 const int sizeOf = 4;
 int[] numbers = new int[sizeOf];
-FillArray(numbers);
+fillArrayWithRandomNumbers(numbers);
 int difference = Magnitude(numbers);
 
 Console.Write($" -> {difference}");
